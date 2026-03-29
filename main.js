@@ -1,6 +1,7 @@
 const { LinkedList } = require('./LinkedList').default;
 const { HashMap } = require('./HashMap').default;
 const { BinarySearchTree } = require('./BinarySearchTree').default;
+const { knightTravails } = require('./KnightTravails').default;
 
 const list = new LinkedList();
 list.append("dog");
@@ -49,4 +50,14 @@ console.log(tree.isBalanced());
 tree.insert(1);
 console.log("is Balanced after inserting 1");
 console.log(tree.isBalanced());
+
+console.log("\nKnight Travails:");
+const path1 = knightTravails([0, 0], [1, 2]);
+console.log("Path from [0,0] to [1,2]:", path1);
+
+const path2 = knightTravails([0, 0], [3, 3]);
+console.log("Path from [0,0] to [3,3]:", path2);
+
+const path3 = knightTravails([3, 3], [4, 5]);
+console.log("Path from [3,3] to [4,5]:", path3);
 
