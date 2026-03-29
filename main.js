@@ -2,6 +2,7 @@ const { LinkedList } = require('./LinkedList').default;
 const { HashMap } = require('./HashMap').default;
 const { BinarySearchTree } = require('./BinarySearchTree').default;
 const { knightTravails } = require('./KnightTravails').default;
+const { Battleship } = require('./Battleship').default;
 
 const list = new LinkedList();
 list.append("dog");
@@ -60,4 +61,21 @@ console.log("Path from [0,0] to [3,3]:", path2);
 
 const path3 = knightTravails([3, 3], [4, 5]);
 console.log("Path from [3,3] to [4,5]:", path3);
+
+console.log("\nBattleship Game:");
+const game = new Battleship();
+game.initializeGame();
+
+console.log("Game initialized!");
+console.log("Player 1 Board:");
+console.log(game.player1.displayOwnBoard());
+
+console.log("\nPlayer 2 Board:");
+console.log(game.player2.displayOwnBoard());
+
+console.log("\n--- Gameplay ---");
+console.log("Player 1 attacks Player 2 at [2,2]:", game.playRound(2, 2));
+console.log("Player 2 attacks Player 1 at [3,3]:", game.playRound(3, 3));
+console.log("Player 1 attacks Player 2 at [0,0]:", game.playRound(0, 0));
+console.log("Player 2 attacks Player 1 at [1,1]:", game.playRound(1, 1));
 
